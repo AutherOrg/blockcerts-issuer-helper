@@ -1,0 +1,29 @@
+{
+  "name": "blockcerts-issuer-helper",
+  "version": "1.0.0",
+  "description": "JS library to help issue Blockcerts certificates.",
+  "repository": "git@github.com:guix77/blockcerts-issuer-helper.git",
+  "author": "Guillaume Duveau <guillaume.duveau@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/blockcerts-issuer.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.5",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "standard": "^14.3.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "standard": {
+    "ignore": [
+      "dist"
+    ]
+  }
+}
