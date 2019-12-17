@@ -1,11 +1,17 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'blockcerts-issuer.js'
-  },
+  entry: [
+    './src/index.js'
+  ],
+  externals: [
+    'ajv',
+    'crypto-js',
+    'isomorphic-fetch',
+    'jsonld',
+    'merkletreejs',
+    'uuid'
+  ],
   module: {
     rules: [
       {
@@ -14,10 +20,24 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              '@babel/preset-env'
+            ],
+            plugins: [
+              ['@babel/transform-runtime']
+            ]
           }
         }
       }
     ]
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'blockcerts-issuer-helper.js',
+    library: 'blockcertsIssuerHelper',
+    libraryExport: 'default',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: 'this'
   }
 }

@@ -1,0 +1,1 @@
+export const BLOCKCERTS_SCHEMA_VERSION_DEFAULT = '2.1'

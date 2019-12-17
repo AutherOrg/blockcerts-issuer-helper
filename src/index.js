@@ -1,7 +1,7 @@
-const sum = (a, b) => {
-  return a + b
-}
+import Certificate from './certificate/Certificate'
+import CertificateValidator from './certificate/CertificateValidator'
 
-export {
-  sum
+export default {
+  Certificate,
+  CertificateValidator
 }

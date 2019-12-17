@@ -1,5 +1,7 @@
 # Contributing
 
+**At first, thanks for contributing to this project!!!**
+
 ## Coding style
 
 Please follow the [StandardJS](https://standardjs.com/) coding style.
@@ -30,6 +32,4 @@ Please do not commit specific editor files or directories such as .vscode.
 
 If you need to create them locally, please add them to the .gitignore.
 
-## Lastly
-
-**Thanks for contributing to this project!!!**
+*Happy coding!*
