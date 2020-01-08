@@ -53,8 +53,8 @@ export default async (certificates, options = { validate: false }) => {
     const chunk = 1000
     for (let i = 0; i < certificates.length; i += chunk) {
       certificatesChunk = certificates.slice(i, i + chunk)
-      leaves.concat(
-        await Promise.all(
+      leaves.push(
+        ...await Promise.all(
           certificatesChunk.map(async certificate => {
             const hash = await certificate.hash()
             return hash
