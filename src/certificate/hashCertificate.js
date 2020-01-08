@@ -459,7 +459,7 @@ const hashCertificate = document => {
   } else {
     expandContext.push({ '@vocab': 'http://fallback.org/' })
   }
-  const nodeDocumentLoader = jsonld.documentLoaders.node()
+  const xhrDocumentLoader = jsonld.documentLoaders.xhr()
   const customLoader = (url, callback) => {
     if (url in contexts) {
       return callback(null, {
@@ -468,7 +468,7 @@ const hashCertificate = document => {
         documentUrl: url
       })
     }
-    return nodeDocumentLoader(url, callback)
+    return xhrDocumentLoader(url, callback)
   }
   jsonld.documentLoader = customLoader
   const normalizeArgs = {
@@ -480,10 +480,9 @@ const hashCertificate = document => {
   }
 
   return new Promise((resolve, reject) => {
-    jsonld.normalize(theDocument, normalizeArgs, (err, normalized) => {
-      const isErr = !!err
-      if (isErr) {
-        reject(new Error('failedJsonLdNormalization'))
+    jsonld.normalize(theDocument, normalizeArgs, (e, normalized) => {
+      if (e) {
+        reject(e.message)
       } else {
         const unmappedFields = getUnmappedFields(normalized)
         if (unmappedFields) {

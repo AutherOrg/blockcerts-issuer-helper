@@ -9,7 +9,7 @@ export default length => {
           identity: 'alice@example.org'
         },
         badge: {
-          name: `Certificate #${i}`,
+          name: `Certificate #${i + 1}`,
           description: 'Fictional University delivers this Computer Science MS Degree.',
           image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
           criteria: {

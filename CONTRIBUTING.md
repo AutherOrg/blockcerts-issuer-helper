@@ -1,6 +1,20 @@
 # Contributing
 
-**At first, thanks for contributing to this project!!!**
+## Yarn / Npm
+
+Please use yarn.
+
+## Node.js version
+
+Please use Node.js version 13.
+
+## Install
+
+````yarn install````
+
+## Build
+
+````yarn build````
 
 ## Coding style
 
@@ -17,14 +31,6 @@ Tests can be locally launched with:
 ````yarn test````
 
 PRs can only be merged if the tests succeed.
-
-## Node.js version
-
-For general development please use Node.js version 13.
-
-## Yarn
-
-Please use yarn instead of npm.
 
 ## Specific editor files
 
