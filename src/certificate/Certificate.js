@@ -1,6 +1,6 @@
 import uuidv4 from 'uuid/v4'
 
-import { BLOCKCERTS_SCHEMA_VERSION_DEFAULT } from '../constants'
+import { BLOCKCERTS_SCHEMA_SHORT_VERSION_DEFAULT } from '../constants'
 import hashCertificate from './hashCertificate'
 
 export default class Certificate {
@@ -8,7 +8,7 @@ export default class Certificate {
     this.certificate = {
       '@context': [
         'https://w3id.org/openbadges/v2',
-        `https://w3id.org/blockcerts/v${BLOCKCERTS_SCHEMA_VERSION_DEFAULT}`,
+        `https://w3id.org/blockcerts/v${BLOCKCERTS_SCHEMA_SHORT_VERSION_DEFAULT}`,
         {
           displayHtml: {
             '@id': 'https://schemas.learningmachine.com/2017/blockcerts/displayHtml',
@@ -81,7 +81,7 @@ export default class Certificate {
           'Extension'
         ],
         name: (data && data.recipientProfile && data.recipientProfile.name) ? data.recipientProfile.name : '',
-        publicKey: (data && data.recipientProfile && data.recipientProfile.publicKey) ? data.recipientProfile.publicKey : ''
+        publicKey: (data && data.recipientProfile && data.recipientProfile.publicKey) ? data.recipientProfile.publicKey : 'ecdsa-koblitz-pubkey:0xdeaddeaddeaddeaddeaddeaddeaddeaddeaddead'
       },
       displayHtml: (data && data.displayHtml) ? data.displayHtml : ''
     }

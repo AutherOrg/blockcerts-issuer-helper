@@ -7,7 +7,7 @@ test('Get schema', async () => {
     {
       $schema: 'http://json-schema.org/draft-04/schema#',
       title: 'Assertion schema',
-      description: 'Blockcerts 2.1 Assertion schema. Extends Open Badges v2.0 schema: https://w3id.org/openbadges#Assertion',
+      description: 'Blockcerts 2.0 Assertion schema. Extends Open Badges v2.0 schema: https://w3id.org/openbadges#Assertion',
       type: 'object',
       definitions: {
         JsonLdContext: {
@@ -56,7 +56,6 @@ test('Get schema', async () => {
           type: 'string',
           description: 'Open Badges SHA-256 Hash',
           pattern: '^sha256\\$[a-fA-F0-9]{64}$'
-
         },
         IdentityObject: {
           title: 'Badge Identity Object',
@@ -114,13 +113,15 @@ test('Get schema', async () => {
             },
             publicKey: {
               type: 'string',
-              anyOf: [{
-                type: 'string',
-                pattern: '^ecdsa-koblitz-pubkey:',
-                description: 'Issuer public key or blockchain address with `<scheme>:` prefix. For Bitcoin transactions, this would be the issuer public address prefixed with `ecdsa-koblitz-pubkey:`. Example: `ecdsa-koblitz-pubkey:14RZvYazz9H2DC2skBfpPVxax54g4yabxe`'
-              }, {
-                type: 'string'
-              }
+              anyOf: [
+                {
+                  type: 'string',
+                  pattern: '^ecdsa-koblitz-pubkey:',
+                  description: 'Issuer public key or blockchain address with `<scheme>:` prefix. For Bitcoin transactions, this would be the issuer public address prefixed with `ecdsa-koblitz-pubkey:`. Example: `ecdsa-koblitz-pubkey:14RZvYazz9H2DC2skBfpPVxax54g4yabxe`'
+                },
+                {
+                  type: 'string'
+                }
               ],
               description: 'Blockcerts extension: the expected blockchain address for the signer of the transaction containing the merkle proof. In Blockcerts `publicKey`s are typically represented with a `<scheme>:` prefix. For Bitcoin transactions, this would be the issuer public Bitcoin address prefixed with `ecdsa-koblitz-pubkey:`; e.g. `ecdsa-koblitz-pubkey:14RZvYazz9H2DC2skBfpPVxax54g4yabxe`'
             }
@@ -182,13 +183,13 @@ test('Get schema', async () => {
           uniqueItems: true
         },
         SignatureLine: {
-          $ref: 'https://w3id.org/blockcerts/schema/2.1/signatureLineSchema.json'
+          $ref: 'https://w3id.org/blockcerts/schema/2.0/signatureLineSchema.json'
         },
         RecipientProfile: {
-          $ref: 'https://w3id.org/blockcerts/schema/2.1/recipientSchema.json'
+          $ref: 'https://w3id.org/blockcerts/schema/2.0/recipientSchema.json'
         },
         MerkleProof2017: {
-          $ref: 'https://w3id.org/blockcerts/schema/2.1/merkleProof2017Schema.json'
+          $ref: 'https://w3id.org/blockcerts/schema/2.0/merkleProof2017Schema.json'
         },
         BadgeClass: {
           description: 'From https://w3id.org/openbadges#BadgeClass',
@@ -224,7 +225,7 @@ test('Get schema', async () => {
               description: 'Defined by `criteria` property of https://w3id.org/openbadges#BadgeClass. This field is required in Open Badges. If migrating from an earlier version, a quick change is to reuse the `description` field'
             },
             issuer: {
-              $ref: 'https://w3id.org/blockcerts/schema/2.1/issuerSchema.json',
+              $ref: '#/definitions/Profile',
               description: 'Defined by `issuer` property of https://w3id.org/openbadges#BadgeClass, with Blockcerts extensions for blockchain verification of badges.'
             },
             alignment: {
@@ -257,6 +258,61 @@ test('Get schema', async () => {
             'image',
             'issuer',
             'criteria'
+          ]
+        },
+        Profile: {
+          description: 'Defined by https://w3id.org/openbadges#Profile. This type is used in certificates, and in the issuer-hosted identification page. The minimal set of properties required in the certificate are `id` and `type`. In this case, additional issuer-identification properties are assumed to be available at the issuer-hosted identification page.',
+          properties: {
+            id: {
+              type: 'string',
+              format: 'uri',
+              description: 'Defined by `id` property of https://w3id.org/openbadges#Profile'
+            },
+            type: {
+              $ref: '#/definitions/JsonLdType',
+              description: 'Defined by `type` property of https://w3id.org/openbadges#Profile'
+            },
+            name: {
+              type: 'string',
+              description: 'Defined by `name` property of https://w3id.org/openbadges#Profile'
+            },
+            url: {
+              type: 'string',
+              format: 'uri',
+              description: 'Defined by `url` property of https://w3id.org/openbadges#Profile'
+            },
+            telephone: {
+              type: 'string',
+              description: 'Defined by `telephone` property of https://w3id.org/openbadges#Profile'
+            },
+            description: {
+              type: 'string',
+              description: 'Defined by `description` property of https://w3id.org/openbadges#Profile'
+            },
+            image: {
+              $ref: '#/definitions/ImageUri',
+              description: 'Defined by `image` property of https://w3id.org/openbadges#Profile'
+            },
+            email: {
+              type: 'string',
+              description: 'Defined by `email` property of https://w3id.org/openbadges#Profile'
+            },
+            revocationList: {
+              anyOf: [
+                {
+                  type: 'string',
+                  format: 'uri'
+                },
+                {
+                  type: 'null'
+                }
+              ],
+              description: 'Defined by `revocationList` property of https://w3id.org/openbadges#Profile. If embedded in a Blockcert and the issuer-hosted Profile, the value in the Blockcert should take preference.'
+            }
+          },
+          required: [
+            'id',
+            'type'
           ]
         }
       },
