@@ -15,7 +15,6 @@ test('Initialize certificate validator', async () => {
 
 test('Validate result should be true for a valid certificate', async () => {
   const result = certificateValidator.validate(certificateValid)
-  console.log(result.errors)
   expect(result).toBe(true)
 })
 
