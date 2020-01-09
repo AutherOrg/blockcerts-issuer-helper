@@ -1,8 +1,6 @@
 /* eslint-env jest */
 import Certificate from './Certificate'
-import CertificateValidator from './CertificateValidator'
 
-const certificateValidator = new CertificateValidator()
 const certificateFromDataSample = {
   id: 'urn:uuid:f3c91f77-3797-43e9-a3c2-2d8f4f839108',
   recipient: {
@@ -35,20 +33,6 @@ const certificateFromDataSample = {
   },
   displayHtml: '<h1>Computer Science MS Degree, Fictional University</h1>'
 }
-
-beforeAll(() => {
-  return certificateValidator.init()
-})
-
-test('Create new empty certificate', async () => {
-  const certificate = new Certificate()
-  expect(certificateValidator.validate(certificate.get())).toBe(true)
-})
-
-test('Create new certificate from data', async () => {
-  const certificate = new Certificate(certificateFromDataSample)
-  expect(certificateValidator.validate(certificate.get())).toBe(true)
-})
 
 test('Hash certificate', async () => {
   const certificate = new Certificate(certificateFromDataSample)
