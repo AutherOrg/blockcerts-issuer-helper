@@ -36,8 +36,8 @@ const certificateFromDataSample = {
 
 test('Hash certificate', async () => {
   const certificate = new Certificate(certificateFromDataSample)
-  expect(await certificate.hash()).toBe('zEFPwEQxeKue1/l5wC0EhfBfbIPowrm6tSv1vOqfIp0=')
-  expect(certificate.getHash()).toBe('zEFPwEQxeKue1/l5wC0EhfBfbIPowrm6tSv1vOqfIp0=')
+  expect(await certificate.hash()).toBe('cc414fc0443178ab9ed7f979c02d0485f05f6c83e8c2b9bab52bf5bcea9f229d')
+  expect(certificate.getHash()).toBe('cc414fc0443178ab9ed7f979c02d0485f05f6c83e8c2b9bab52bf5bcea9f229d')
 })
 
 test('Set certificate Merkle proofs', async () => {

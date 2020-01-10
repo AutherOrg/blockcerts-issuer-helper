@@ -1,6 +1,5 @@
 import jsonld from 'jsonld'
 import sha256 from 'crypto-js/sha256'
-import Base64 from 'crypto-js/enc-base64'
 
 const contextsMap = {
   obi: {
@@ -488,7 +487,7 @@ const hashCertificate = document => {
         if (unmappedFields) {
           reject(new Error('foundUnmappedFields'))
         } else {
-          const hash = Base64.stringify(sha256(normalized))
+          const hash = sha256(normalized).toString()
           resolve(hash)
         }
       }
