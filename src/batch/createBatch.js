@@ -34,7 +34,6 @@ export default async (certificates, options = { validate: false }) => {
     //     return hash
     //   })
     // )
-    // console.log('HASHING FINISHED')
 
     /**
      * This implementation is fine but is horribly slow.
