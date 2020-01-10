@@ -2,9 +2,9 @@
 
 ## Introduction
 
-*blockcerts-issuer-helper* is a opensource JavaScript library for Node and the browser to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
+**blockcerts-issuer-helper** is a opensource JavaScript library for Node and the browser to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
 
-This library has been developed with financial support by GIZ Lab as the core component of a project with [GIZ](https://www.giz.de/en/html/index.html) (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH) and [SEAMEO INNOTECH](https://www.seameo-innotech.org/) (Regional Center for Educational Innovation and Technology, Southeast Asian Ministers of Education Organization).
+*This library has been developed with financial support by GIZ Lab as the core component of a project with [GIZ](https://www.giz.de/en/html/index.html) (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH) and [SEAMEO INNOTECH](https://www.seameo-innotech.org/) (Regional Center for Educational Innovation and Technology, Southeast Asian Ministers of Education Organization).*
 
 ### What this library does
 
