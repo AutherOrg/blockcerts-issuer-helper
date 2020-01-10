@@ -1,7 +1,7 @@
 {
   "name": "blockcerts-issuer-helper",
   "version": "1.0.0",
-  "description": "JS library to help issue Blockcerts certificates.",
+  "description": "JavaScript library for Node and the browser to help issue Blockcerts certificates.",
   "repository": "git@github.com:guix77/blockcerts-issuer-helper.git",
   "author": "Guillaume Duveau <guillaume.duveau@gmail.com>",
   "license": "MIT",
