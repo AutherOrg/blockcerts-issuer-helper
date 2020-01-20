@@ -2,9 +2,7 @@
 
 ## Introduction
 
-**blockcerts-issuer-helper** is a opensource JavaScript library for Node and the browser to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
-
-*This library has been developed with financial support by GIZ Lab as the core component of a project with [GIZ](https://www.giz.de/en/html/index.html) (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH) and [SEAMEO INNOTECH](https://www.seameo-innotech.org/) (Regional Center for Educational Innovation and Technology, Southeast Asian Ministers of Education Organization).*
+**Blockcerts issuer helper** is a opensource JavaScript library for Node and the browser to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
 
 ### What this library does
 
@@ -204,11 +202,7 @@ const certificates = signBatch(certificates, type, sourceId, chain, options)
 
 ## Issues
 
-Please report issues [here](https://github.com/guix77/blockcerts-issuer-helper/issues).
-
-## General discussion
-
-Please post on the [Blockcerts.org forum topic](https://community.blockcerts.org/t/TODO).
+Please report issues [here](https://github.com/openblockcerts/blockcerts-issuer-helper/issues).
 
 ## Development
 
@@ -216,11 +210,5 @@ Please read the [contribution guidelines](CONTRIBUTING.md).
 
 ## Credits
 
-### Developers
-
-+ Guillaume Duveau, freelance blockchain & web developer, original author of this [Blockcerts](https://guillaumeduveau.com/en/blockcerts) library
-
-### Partners
-
-+ [GIZ](https://www.giz.de/en/html/index.html) (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH)
-+ [SEAMEO INNOTECH](https://www.seameo-innotech.org/) (Regional Center for Educational Innovation and Technology, Southeast Asian Ministers of Education Organization)
++ [GIZ](https://www.giz.de/en/html/index.html) (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH): this library has been originally developed with financial support by GIZ Lab.
++ [SEAMEO INNOTECH](https://www.seameo-innotech.org/) (Regional Center for Educational Innovation and Technology, Southeast Asian Ministers of Education Organization) : this library has been originally developed for SEAMEO-INNOTECH.
