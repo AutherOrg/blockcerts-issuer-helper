@@ -107,6 +107,11 @@ export default class Certificate {
     return this.hash
   }
 
+  // TODO test.
+  setDisplayHtml (displayHtml) {
+    this.certificate.displayHtml = displayHtml
+  }
+
   setMerkleProofs (proof, merkleRoot, targetHash) {
     this.certificate.signature = {
       type: [
@@ -129,3 +134,5 @@ export default class Certificate {
     ]
   }
 }
+
+// TODO: maybe implement https://babeljs.io/docs/en/babel-plugin-proposal-optional-chaining, it will be in ES2020.
