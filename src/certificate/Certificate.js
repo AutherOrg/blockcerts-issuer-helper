@@ -52,9 +52,7 @@ export default class Certificate {
         name: (data && data.badge && data.badge.name) ? data.badge.name : '',
         description: (data && data.badge && data.badge.description) ? data.badge.description : '',
         image: (data && data.badge && data.badge.image) ? data.badge.image : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
-        criteria: {
-          narrative: (data && data.badge && data.badge.criteria && data.badge.criteria.narrative) ? data.badge.criteria.narrative : ''
-        },
+        criteria: {},
         issuer: {
           id: (data && data.badge && data.badge.issuer && data.badge.issuer.id) ? data.badge.issuer.id : '',
           type: 'Profile',
