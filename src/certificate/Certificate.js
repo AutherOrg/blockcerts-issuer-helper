@@ -44,7 +44,7 @@ export default class Certificate {
           'MerkleProofVerification2017',
           'Extension'
         ],
-        publicKey: ''
+        publicKey: (data && data.verification && data.verification.publicKey) ? `ecdsa-koblitz-pubkey:${data.verification.publicKey}` : ''
       },
       badge: {
         type: 'BadgeClass',
