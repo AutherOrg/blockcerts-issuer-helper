@@ -3,6 +3,8 @@ import uuidv4 from 'uuid/v4'
 import { BLOCKCERTS_SCHEMA_SHORT_VERSION_DEFAULT } from '../constants'
 import hashCertificate from './hashCertificate'
 
+const defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+
 export default class Certificate {
   constructor (data) {
     this.certificate = {
@@ -51,7 +53,7 @@ export default class Certificate {
         id: (data && data.badge && data.badge.id) ? data.badge.id : `urn:uuid:${uuidv4()}`,
         name: (data && data.badge && data.badge.name) ? data.badge.name : '',
         description: (data && data.badge && data.badge.description) ? data.badge.description : '',
-        image: (data && data.badge && data.badge.image) ? data.badge.image : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+        image: (data && data.badge && data.badge.image) ? data.badge.image : defaultImage,
         criteria: {},
         issuer: {
           id: (data && data.badge && data.badge.issuer && data.badge.issuer.id) ? data.badge.issuer.id : '',
@@ -68,9 +70,7 @@ export default class Certificate {
               'SignatureLine',
               'Extension'
             ],
-            jobTitle: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.jobTitle) ? data.badge.signatureLines.jobTitle : '',
-            image: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.image) ? data.badge.signatureLines.image : '',
-            name: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.name) ? data.badge.signatureLines.name : ''
+            image: defaultImage
           }
         ]
       },
@@ -104,6 +104,21 @@ export default class Certificate {
 
   getHash () {
     return this.hash
+  }
+
+  // TODO test.
+  setSignatureLines (signatureLines) {
+    this.certificate.badge.signatureLines = signatureLines.map(signatureLine => {
+      return {
+        type: [
+          'SignatureLine',
+          'Extension'
+        ],
+        image: signatureLine.image,
+        jobTitle: signatureLine.jobTitle,
+        name: signatureLines.name
+      }
+    })
   }
 
   // TODO test.
