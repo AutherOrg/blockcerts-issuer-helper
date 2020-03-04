@@ -25,7 +25,8 @@ const certificateFromDataSample = {
     },
     signatureLines: {
       jobTitle: 'President',
-      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=='
+      image: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+      name: 'John Doe'
     }
   },
   recipientProfile: {
@@ -36,8 +37,8 @@ const certificateFromDataSample = {
 
 test('Hash certificate', async () => {
   const certificate = new Certificate(certificateFromDataSample)
-  expect(await certificate.hash()).toBe('0160bb0dc4c78f69f8f24927cb34b3485b28923310dfd684c4512bd4d3f20162')
-  expect(certificate.getHash()).toBe('0160bb0dc4c78f69f8f24927cb34b3485b28923310dfd684c4512bd4d3f20162')
+  expect(await certificate.hash()).toBe('d0759dd80b0fa529869441b1fb28a38fc7c5e8a757168262f0ae040dcb507bea')
+  expect(certificate.getHash()).toBe('d0759dd80b0fa529869441b1fb28a38fc7c5e8a757168262f0ae040dcb507bea')
 })
 
 test('Set certificate Merkle proofs', async () => {

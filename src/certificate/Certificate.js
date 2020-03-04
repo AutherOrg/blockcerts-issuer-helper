@@ -69,7 +69,8 @@ export default class Certificate {
               'Extension'
             ],
             jobTitle: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.jobTitle) ? data.badge.signatureLines.jobTitle : '',
-            image: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.image) ? data.badge.signatureLines.image : ''
+            image: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.image) ? data.badge.signatureLines.image : '',
+            name: (data && data.badge && data.badge.signatureLines && data.badge.signatureLines.name) ? data.badge.signatureLines.name : ''
           }
         ]
       },
