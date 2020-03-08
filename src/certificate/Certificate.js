@@ -114,9 +114,9 @@ export default class Certificate {
           'SignatureLine',
           'Extension'
         ],
-        image: signatureLine.image,
+        name: signatureLine.name,
         jobTitle: signatureLine.jobTitle,
-        name: signatureLines.name
+        image: signatureLine.image
       }
     })
   }
