@@ -1,8 +1,12 @@
 # Blockcerts issuer helper
 
+[![Test code](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Tint%20code/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Test+code%22)
+[![Lint code](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Lint%20code/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Lint+code%22)
+[![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
+
 ## Introduction
 
-**Blockcerts issuer helper** is a opensource JavaScript library for Node and the browser to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
+**Blockcerts issuer helper** is a opensource JavaScript library for Node and the browser, originally developed for [Auther](https://auther.org) and that allows to create and issue [Blockcerts](https://www.blockcerts.org) certificates.
 
 ### What this library does
 
