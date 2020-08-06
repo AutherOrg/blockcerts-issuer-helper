@@ -1,8 +1,8 @@
 # Blockcerts issuer helper
 
-[![Test code](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Test%20code/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Test+code%22)
-[![Lint code](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Lint%20code/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Lint+code%22)
-[![Code style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
+[![Tests](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Tests/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Tests%22)
+[![Lint](https://github.com/AutherOrg/blockcerts-issuer-helper/workflows/Lint/badge.svg)](https://github.com/AutherOrg/blockcerts-issuer-helper/actions?query=workflow%3A%22Lint%22)
+[![Code style](https://img.shields.io/badge/Code_style-standard-brightgreen.svg)](https://github.com/standard/standard)
 
 ## Introduction
 
